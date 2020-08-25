@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { withRouter } from "react-router-dom";
 import './navbar.css';
 class Navbar extends React.Component{
  
@@ -15,7 +14,10 @@ class Navbar extends React.Component{
 
             <div className='navbarbg'> 
                               
-                    <h2>Product Inventory System</h2>
+                    <h2 className="navpbg">Product Inventory System</h2>
+                    <h3 className="rightbg">
+                        <button><Link to='/'>Home</Link></button>
+                    </h3>
                               
             </div>
                 
@@ -25,4 +27,4 @@ class Navbar extends React.Component{
         
     
 
-export default withRouter(Navbar);
+export default Navbar;

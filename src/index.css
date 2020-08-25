@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/172/891/original/online-shopping-center-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: 1800px 1000px; 
 }
 
 code {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import deleteProductBroadcast from '../actions/deleteproductbroadcast';
 import editProductBroadcast from '../actions/editProductBroadcast';
+import searchBroadcast from '../actions/searchBroadcast';
 require('./homeContainer.css')
 
 
@@ -25,6 +26,7 @@ class HomeContainer extends React.Component {
             state:{myid: id}
         })
     }
+    
 
 
     renderAllProducts=()=>{
@@ -66,8 +68,11 @@ class HomeContainer extends React.Component {
     render() { 
         return ( 
             <div>
-                <br></br><br></br>
+                <br></br><br></br><br></br><br></br>
                 <button onClick={this.openAddProduct} className="btnbg" >Add Product</button>
+
+                <input type="text"className="search" placeholder="Search Here"  onChange={(event)=>this.props.search(event.target.value)}></input> <br></br>      
+                 
 
             {this.renderAllProducts()}
 
@@ -84,7 +89,8 @@ function mapStateToProps(state){
 function convertPropToEventAndBroadcast(dispatch){
     return bindActionCreators({
         deleteProduct: deleteProductBroadcast, 
-         editProduct:editProductBroadcast
+         editProduct:editProductBroadcast,
+         search:searchBroadcast
     }, dispatch)
 }
 export default connect(mapStateToProps,convertPropToEventAndBroadcast)(HomeContainer);

@@ -49,4 +49,15 @@
       background-color: darkblue;
     color: white;
     float: right;
+    font-size: large;
+}
+
+.search{
+  width: 50%;
+   height: 40px;
+  margin-top: 1%;
+  color: black;
+  border: 1px solid;
+  
+
 }

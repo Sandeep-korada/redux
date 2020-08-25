@@ -2,6 +2,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import editProductBroadcast from '../actions/editProductBroadcast';
+require('./editproduct.css');
 class EditProductContainer extends React.Component {
 
     constructor(props) {
@@ -94,7 +95,7 @@ class EditProductContainer extends React.Component {
             <div className="editpbg">
            <div className="transbox">
             <form>
-                 <h2>Edit/Update</h2><hr></hr>
+                 <h2 className="Edit">Edit/Update</h2><hr></hr>
                 <label>Id: </label>
                 <input type="text" value={this.state.id} readOnly></input>
                 <br></br><br></br>
@@ -124,9 +125,9 @@ class EditProductContainer extends React.Component {
                
                 <br></br><br></br>
                 
-                <button type="button" onClick={this.EditProduct} >Edit Product</button>
+                <button type="button" onClick={this.EditProduct} className="btnedit">Edit Product</button>
                 <br></br>
-                              
+                             <br></br> 
             </form>
             </div>
             </div>

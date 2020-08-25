@@ -1,10 +1,10 @@
-import { bindActionCreators } from "redux";
+
 const homeReducer=function allProductsReducer(state=null,action){
 
 
     var allProducts= [
         {
-            productName: "mobile1",
+            productName: "mobile",
             productPrice: 50000,
             productimage: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
             productDescription: "fgvhbjn",
@@ -15,13 +15,21 @@ const homeReducer=function allProductsReducer(state=null,action){
         {
             productName: "park avenue",
             productPrice: 50,
-            productimage: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+            productimage: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSIlDNcJ5fwY32UELgFM7hWIb8UR2hEsfVUXQ&usqp=CAU",
             productDescription: "Nice Perfume",
             productStock: 25,
             productCategory: "Perfumes",
         id: 2
+        },
+        {
+        productName: "shirt",
+        productPrice: 20,
+        productimage: "https://static.cilory.com/288824-thickbox_default/nologo-off-white-red-casual-shirt.jpg",
+        productDescription: "Nice Perfume",
+        productStock: 25,
+        productCategory: "clothing",
+        id: 3
         }
-        
     ]
     switch (action.type) {
         case "NEW_PRODUCT":
@@ -58,8 +66,14 @@ const homeReducer=function allProductsReducer(state=null,action){
         }
       }
       return state;
+      case "SEARCH_PRODUCT":
+        allProducts = allProducts.filter((product) => {
+          return ((product.productName.toLowerCase().includes(action.payload)) || (product.productCategory.toLowerCase().includes(action.payload)) )
+        })
+        return allProducts;
+    }
 
-  }
+  
   return allProducts
 }
 export default homeReducer;

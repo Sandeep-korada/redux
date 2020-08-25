@@ -10,7 +10,7 @@
 h2{
     display: inline;
     text-decoration: red;
-    font-size: 30px;
+    font-size: 40px;
     color: white;        
 }
 .navpbg{
@@ -21,3 +21,4 @@ float: left;
     margin-right: 2%;
     float: right;
 }
+
